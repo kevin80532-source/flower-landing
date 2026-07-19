@@ -797,9 +797,55 @@ body {
   height: 1.5px;
   background: rgba(92, 157, 6, 0.834);
   display: inline-block;
-  flex-shrink: 0; /* Mencegah line mengecil */
+  flex-shrink: 0;
 }
 
+/* Animasi untuk header testimoni */
+.testimoni-header {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimoni-header.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimoni-header.hide {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Animasi untuk kartu testimoni */
+.testimoni-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimoni-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.testimoni-card.hide {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+}
+
+/* Delay animasi untuk setiap kartu (opsional) */
+.testimoni-card:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.testimoni-card:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.testimoni-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
 /* --- Gaya Dasar untuk Animasi Kontak --- */
 .contact-trigger {
   opacity: 0;
