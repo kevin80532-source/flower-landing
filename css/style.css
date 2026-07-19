@@ -1,0 +1,837 @@
+/* Base styles yang sebelumnya ada di tailwind.config */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.font-serif-luxury {
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Warna custom yang sebelumnya di tailwind.config */
+.bg-brand-green {
+  background-color: #526e2d;
+}
+.hover\:bg-brand-greenDark:hover {
+  background-color: #3e5322;
+}
+.text-brand-green {
+  color: #526e2d;
+}
+.border-brand-green {
+  border-color: #526e2d;
+}
+.bg-brand-pinkLight {
+  background-color: #fff0ed;
+}
+.text-brand-pink {
+  color: #f7a797;
+}
+.border-brand-pink {
+  border-color: #f7a797;
+}
+.bg-brand-bg {
+  background-color: #faf9f6;
+}
+
+.border-20 {
+  border-radius: 20px;
+}
+
+/* Animasi dan efek tambahan */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-\[spin_80s_linear_infinite\] {
+  animation: spin 80s linear infinite;
+}
+
+/* Scale hover effects */
+.group-hover\:scale-115 {
+  transform: scale(1.15);
+}
+.group:hover .group-hover\:scale-115 {
+  transform: scale(1.15);
+}
+
+.group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+.group-hover\:scale-100 {
+  transform: scale(1);
+}
+.group:hover .group-hover\:scale-100 {
+  transform: scale(1);
+}
+
+.group-hover\:scale-95 {
+  transform: scale(0.95);
+}
+.group:hover .group-hover\:scale-95 {
+  transform: scale(0.95);
+}
+
+/* Rotate effects */
+.group-hover\:rotate-18 {
+  transform: rotate(18deg);
+}
+.group:hover .group-hover\:rotate-18 {
+  transform: rotate(18deg);
+}
+
+.group-hover\:-rotate-12 {
+  transform: rotate(-12deg);
+}
+.group:hover .group-hover\:-rotate-12 {
+  transform: rotate(-12deg);
+}
+
+.group-hover\:rotate-0 {
+  transform: rotate(0deg);
+}
+.group:hover .group-hover\:rotate-0 {
+  transform: rotate(0deg);
+}
+
+.group-hover\:translate-x-0 {
+  transform: translateX(0);
+}
+.group:hover .group-hover\:translate-x-0 {
+  transform: translateX(0);
+}
+
+.group-hover\:-translate-y-12 {
+  transform: translateY(-3rem);
+}
+.group:hover .group-hover\:-translate-y-12 {
+  transform: translateY(-3rem);
+}
+
+.group-hover\:-translate-y-6 {
+  transform: translateY(-1.5rem);
+}
+.group:hover .group-hover\:-translate-y-6 {
+  transform: translateY(-1.5rem);
+}
+
+.group-hover\:translate-y-4 {
+  transform: translateY(1rem);
+}
+.group:hover .group-hover\:translate-y-4 {
+  transform: translateY(1rem);
+}
+
+/* Opacity hover effects */
+.group-hover\:opacity-100 {
+  opacity: 1;
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+.group-hover\:opacity-0 {
+  opacity: 0;
+}
+.group:hover .group-hover\:opacity-0 {
+  opacity: 0;
+}
+
+/* Mix blend mode */
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+/* Grayscale hover */
+.hover\:grayscale-0:hover {
+  filter: grayscale(0);
+}
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+/* Transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-700 {
+  transition-duration: 700ms;
+}
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.shadow-brand-green\/20 {
+  box-shadow:
+    0 10px 15px -3px rgba(82, 110, 45, 0.2),
+    0 4px 6px -2px rgba(82, 110, 45, 0.1);
+}
+
+.mb-standar {
+  margin-bottom: 50px;
+}
+
+.mb-small {
+  margin-bottom: 20px;
+}
+
+.scroll-margin-top {
+  scroll-margin-top: 70px;
+}
+
+/* =========================== */
+/* HERO SECTION ANIMATION */
+/* =========================== */
+
+.hero-section {
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-section.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.hero-section.hide {
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+}
+
+/* Hero Content Animation */
+.hero-content {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 0.8s ease 0.3s,
+    transform 0.8s ease 0.3s;
+}
+
+.hero-section.active .hero-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-section.hide .hero-content {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Hero Images Animation */
+.hero-images {
+  opacity: 0;
+  transform: translateX(50px) scale(0.9);
+  transition:
+    opacity 0.8s ease 0.5s,
+    transform 0.8s ease 0.5s;
+}
+
+.hero-section.active .hero-images {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.hero-section.hide .hero-images {
+  opacity: 0;
+  transform: translateX(50px) scale(0.9);
+}
+
+/* Badge Animation */
+.hero-section .inline-flex {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.6s ease 0.1s,
+    transform 0.6s ease 0.1s;
+}
+
+.hero-section.active .inline-flex {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading Animation */
+.hero-section h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease 0.2s,
+    transform 0.8s ease 0.2s;
+}
+
+.hero-section.active h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-section.hide h1 {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Paragraph Animation */
+.hero-section p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease 0.4s,
+    transform 0.8s ease 0.4s;
+}
+
+.hero-section.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-section.hide p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Buttons Animation */
+.hero-section .pt-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease 0.6s,
+    transform 0.8s ease 0.6s;
+}
+
+.hero-section.active .pt-2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-section.hide .pt-2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ===========================
+   CARD KEUNGGULAN ANIMATION
+=========================== */
+
+/* Kondisi awal */
+.feature-card {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Saat masuk viewport */
+.feature-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Saat keluar viewport dengan efek smooth */
+.feature-card.hide {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Delay tiap card untuk efek berurutan */
+.feature-card:nth-child(1).show {
+  transition-delay: 0.1s;
+}
+
+.feature-card:nth-child(2).show {
+  transition-delay: 0.25s;
+}
+
+.feature-card:nth-child(3).show {
+  transition-delay: 0.4s;
+}
+
+/* ===========================
+   HEADING ANIMATION
+=========================== */
+
+.heading-line {
+  width: 80px;
+  height: 1px;
+  background: rgba(82, 110, 45, 0.35);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Saat heading aktif (visible) */
+.heading.active .heading-line {
+  transform: scaleX(1);
+}
+
+.heading-title {
+  opacity: 0;
+  transform: translateY(35px) scale(0.98);
+  filter: blur(6px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.active .heading-title {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transition-delay: 0.2s;
+}
+
+.heading-subtitle {
+  opacity: 0;
+  letter-spacing: 0.6em;
+  transform: translateY(18px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.active .heading-subtitle {
+  opacity: 1;
+  letter-spacing: 0.35em;
+  transform: translateY(0);
+  transition-delay: 0.55s;
+}
+
+.heading-description {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(25px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.active .heading-description {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+/* Saat heading keluar viewport */
+.heading.hide .heading-title {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.98);
+  filter: blur(6px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.hide .heading-subtitle {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.hide .heading-description {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(-20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading.hide .heading-line {
+  transform: scaleX(0);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================== */
+/* KATEGORI PRODUK ANIMATION */
+/* =========================== */
+
+.kategori-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kategori-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kategori-section.hide {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Kategori Header Animation */
+.kategori-header {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition:
+    opacity 0.8s ease 0.1s,
+    transform 0.8s ease 0.1s;
+}
+
+.kategori-section.active .kategori-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kategori-section.hide .kategori-header {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Kategori Title Wrapper - Flex container untuk line di samping teks */
+.kategori-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.8s ease 0.2s,
+    transform 0.8s ease 0.2s;
+}
+
+.kategori-section.active .kategori-title-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kategori Line - Updated */
+.kategori-line {
+  width: 40px;
+  height: 1.5px;
+  background: rgba(92, 157, 6, 0.834);
+  display: inline-block;
+  transform: scaleX(0);
+  transition: transform 0.6s ease 0.3s;
+  flex-shrink: 0; /* Mencegah line mengecil */
+}
+
+.kategori-section.active .kategori-line {
+  transform: scaleX(1);
+}
+
+/* Optional: Tambahkan efek glow pada line */
+.kategori-line {
+  position: relative;
+}
+
+.kategori-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(92, 157, 6, 0.3);
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.kategori-section.active .kategori-line::after {
+  opacity: 1;
+}
+
+/* Kategori Grid Animation */
+.kategori-grid {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease 0.3s,
+    transform 0.8s ease 0.3s;
+}
+
+.kategori-section.active .kategori-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kategori-section.hide .kategori-grid {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Kategori Card Individual Animation */
+.kategori-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.5s,
+    transform 0.5s;
+}
+
+.kategori-section.active .kategori-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered delay for each card */
+.kategori-section.active .kategori-card:nth-child(1) {
+  transition-delay: 0.4s;
+}
+
+.kategori-section.active .kategori-card:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.kategori-section.active .kategori-card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.kategori-section.active .kategori-card:nth-child(4) {
+  transition-delay: 0.7s;
+}
+
+.kategori-section.hide .kategori-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+/* Hover effect tetap dipertahankan */
+.kategori-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 640px) {
+  .kategori-line {
+    width: 25px;
+  }
+
+  .kategori-title-wrapper {
+    gap: 8px;
+  }
+}
+
+/* KATALOG CSS */
+.katalog-line {
+  width: 40px;
+  height: 1.5px;
+  background: rgba(92, 157, 6, 0.834);
+  display: inline-block;
+  flex-shrink: 0; /* Mencegah line mengecil */
+}
+
+.katalog-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: #526e2d;
+  opacity: 0.3;
+}
+.filter-btn[data-active="true"] {
+  background-color: #526e2d;
+  color: white;
+  border-color: #526e2d;
+}
+.product-card .category-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #526e2d;
+  border: 1px solid rgba(82, 110, 45, 0.2);
+}
+.product-card .wa-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: #1c1c1c;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 0.3s;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.product-card .wa-btn:hover {
+  background: #526e2d;
+  transform: scale(1.02);
+}
+.product-card .img-wrap {
+  border-radius: 2.5rem;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  background: #f5f5f0;
+  border: 1px solid #eaeae5;
+  position: relative;
+}
+.product-card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.product-card:hover .img-wrap img {
+  transform: scale(1.04);
+}
+.product-card.hide {
+  display: none;
+}
+.capsule-katalog {
+  padding: 10px 20px;
+}
+
+/* Class dasar untuk elemen yang akan dianimasi */
+#katalog .flex.items-center.justify-center.gap-4,
+#katalog .font-serif-luxury,
+#katalog .h-\[1px\],
+#katalog .filter-btn,
+#katalog .text-stone-400.italic,
+#katalog .text-center.mt-16 div a,
+#katalog .max-w-7xl {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Class show - muncul dari bawah */
+#katalog .show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Class hide - kembali ke bawah */
+#katalog .hide {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+
+/* Variasi delay untuk elemen header */
+#katalog .flex.items-center.justify-center.gap-4 {
+  transition-delay: 0.1s;
+}
+
+#katalog .font-serif-luxury {
+  transition-delay: 0.2s;
+}
+
+#katalog .h-\[1px\] {
+  transition-delay: 0.3s;
+}
+
+/* Variasi delay untuk tombol filter */
+#katalog .filter-btn:nth-child(1) {
+  transition-delay: 0.1s;
+}
+#katalog .filter-btn:nth-child(2) {
+  transition-delay: 0.2s;
+}
+#katalog .filter-btn:nth-child(3) {
+  transition-delay: 0.3s;
+}
+#katalog .filter-btn:nth-child(4) {
+  transition-delay: 0.4s;
+}
+#katalog .filter-btn:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* Variasi delay untuk footer */
+#katalog .text-stone-400.italic {
+  transition-delay: 0.1s;
+}
+
+#katalog .text-center.mt-16 div a {
+  transition-delay: 0.2s;
+}
+
+/* Efek tambahan - scale halus untuk tombol saat muncul */
+#katalog .filter-btn.show {
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: translateY(30px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Efek untuk wrapper - fade in saja */
+#katalog .max-w-7xl {
+  transition: opacity 1s ease;
+  transform: none;
+}
+
+#katalog .max-w-7xl.show {
+  opacity: 1;
+}
+
+#katalog .max-w-7xl.hide {
+  opacity: 0;
+}
+
+/* TESTIMONI CSS */
+.testimoni-line {
+  width: 40px;
+  height: 1.5px;
+  background: rgba(92, 157, 6, 0.834);
+  display: inline-block;
+  flex-shrink: 0; /* Mencegah line mengecil */
+}
+
+/* --- Gaya Dasar untuk Animasi Kontak --- */
+.contact-trigger {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-trigger.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-trigger.hide {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Penundaan (Delay) untuk efek bertahap (Stagger) */
+.contact-trigger:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.contact-trigger:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.contact-trigger:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.contact-trigger:nth-child(4) {
+  transition-delay: 0.35s;
+}
+.contact-trigger:nth-child(5) {
+  transition-delay: 0.45s;
+}
