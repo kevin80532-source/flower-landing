@@ -15,6 +15,13 @@ mobileLinks.forEach((link) => {
   });
 });
 
+const gallery = document.getElementById("flowerGallery");
+
+gallery.addEventListener("click", () => {
+  // Menambah class 'active' jika belum ada, atau menghapusnya jika sudah ada
+  gallery.classList.toggle("active");
+});
+
 // ===========================
 // SECTION KEUNGGULAN ANIMATION
 // ===========================
@@ -168,33 +175,34 @@ document.addEventListener("DOMContentLoaded", function () {
   // ANIMASI UNTUK ELEMEN KATALOG
   // ============================================
 
-  // 1. Animasi untuk section header (judul, garis, dll)
-  const headerElements = document.querySelectorAll(
-    "#katalog .text-center .flex, #katalog .text-center h2, #katalog .text-center .h\\[1px\\]",
-  );
+  // Mengamati seluruh section katalog
+  const katalogSection = document.getElementById("katalog");
 
-  if (headerElements.length > 0) {
-    const headerObserver = new IntersectionObserver(
+  if (katalogSection) {
+    const katalogObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove("hide");
-            entry.target.classList.add("show");
+            // Tambahkan class 'active' pada section induk
+            entry.target.classList.add("active");
+
+            // OPSIONAL: Hapus tanda komentar di bawah jika ingin animasi
+            // hanya berjalan sekali dan tidak hilang saat scroll ke atas lagi.
+            // katalogObserver.unobserve(entry.target);
           } else {
-            entry.target.classList.remove("show");
-            entry.target.classList.add("hide");
+            // Hapus 'active' jika ingin elemen bersembunyi kembali saat keluar layar
+            entry.target.classList.remove("active");
           }
         });
       },
       {
-        threshold: 0.3,
-        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.05, // 5% area section masuk layar langsung aktif (Sangat aman untuk HP)
+        rootMargin: "0px 0px -20px 0px",
       },
     );
 
-    headerElements.forEach((el) => headerObserver.observe(el));
+    katalogObserver.observe(katalogSection);
   }
-
   // 2. Animasi untuk tombol filter kategori
   const filterButtons = document.querySelectorAll(".filter-btn");
 

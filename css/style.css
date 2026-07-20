@@ -618,7 +618,6 @@ body {
 
 /* Mengatur ukuran teks judul dan margin bawahnya */
 .kategori-card h3 {
-  font-size: 1.25rem !important; /* Memperkecil ukuran judul sedikit ke 20px */
   line-height: 1.4 !important;
   margin-bottom: 0.25rem !important; /* Mengurangi margin bawah judul */
 }
@@ -831,75 +830,72 @@ body {
   padding: 10px 20px;
 }
 
-/* Class dasar untuk elemen yang akan dianimasi */
+/* 1. Keadaan Awal Elemen (Sebelum Masuk Layar / Sembunyi) */
 #katalog .flex.items-center.justify-center.gap-4,
 #katalog .font-serif-luxury,
-#katalog .h-\[1px\],
+#katalog div[style*="height: 1px"],
 #katalog .filter-btn,
 #katalog .text-stone-400.italic,
-#katalog .text-center.mt-16 div a,
-#katalog .max-w-7xl {
+#katalog .text-center.mt-16 div a {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(25px);
+  pointer-events: none;
   transition:
     opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Class show - muncul dari bawah */
-#katalog .show {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+/* 2. Keadaan Setelah Section Aktif (Muncul) */
+#katalog.active .flex.items-center.justify-center.gap-4,
+#katalog.active .font-serif-luxury,
+#katalog.active div[style*="height: 1px"],
+#katalog.active .filter-btn,
+#katalog.active .text-stone-400.italic,
+#katalog.active .text-center.mt-16 div a {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* Class hide - kembali ke bawah */
-#katalog .hide {
-  opacity: 0 !important;
-  transform: translateY(30px) !important;
-}
-
-/* Variasi delay untuk elemen header */
-#katalog .flex.items-center.justify-center.gap-4 {
+/* 3. Variasi Urutan Delay Elemen Header */
+#katalog.active .flex.items-center.justify-center.gap-4 {
   transition-delay: 0.1s;
 }
-
-#katalog .font-serif-luxury {
+#katalog.active .font-serif-luxury {
   transition-delay: 0.2s;
 }
-
-#katalog .h-\[1px\] {
+#katalog.active div[style*="height: 1px"] {
   transition-delay: 0.3s;
 }
 
-/* Variasi delay untuk tombol filter */
-#katalog .filter-btn:nth-child(1) {
-  transition-delay: 0.1s;
+/* 4. Variasi Urutan Delay Tombol Filter (Stagger Effect) */
+#katalog.active .filter-btn:nth-child(1) {
+  transition-delay: 0.35s;
 }
-#katalog .filter-btn:nth-child(2) {
-  transition-delay: 0.2s;
+#katalog.active .filter-btn:nth-child(2) {
+  transition-delay: 0.45s;
 }
-#katalog .filter-btn:nth-child(3) {
-  transition-delay: 0.3s;
+#katalog.active .filter-btn:nth-child(3) {
+  transition-delay: 0.55s;
 }
-#katalog .filter-btn:nth-child(4) {
-  transition-delay: 0.4s;
+#katalog.active .filter-btn:nth-child(4) {
+  transition-delay: 0.65s;
 }
-#katalog .filter-btn:nth-child(5) {
+#katalog.active .filter-btn:nth-child(5) {
+  transition-delay: 0.75s;
+}
+
+/* 5. Variasi Urutan Delay Footer Koleksi */
+#katalog.active .text-stone-400.italic {
   transition-delay: 0.5s;
 }
-
-/* Variasi delay untuk footer */
-#katalog .text-stone-400.italic {
-  transition-delay: 0.1s;
+#katalog.active .text-center.mt-16 div a {
+  transition-delay: 0.6s;
 }
 
-#katalog .text-center.mt-16 div a {
-  transition-delay: 0.2s;
-}
-
-/* Efek tambahan - scale halus untuk tombol saat muncul */
-#katalog .filter-btn.show {
-  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+/* 6. Utility Tambahan */
+.scroll-margin-top {
+  scroll-margin-top: 70px;
 }
 
 @keyframes popIn {
@@ -1058,4 +1054,92 @@ body {
 }
 .contact-trigger:nth-child(5) {
   transition-delay: 0.45s;
+}
+
+/* Kontainer Utama */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  max-width: 32rem; /* Setara max-w-lg */
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Memberi indikasi bahwa area ini bisa diklik */
+}
+
+/* Base Style untuk Semua Kartu Foto (Ukuran Disamakan) */
+.photo-card {
+  position: absolute;
+  width: 100%;
+  max-width: 240px;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 2.2rem;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* PENTING: Animasi transisi agar pergerakan kartu smooth */
+  transition:
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.4s;
+
+  /* POSISI AWAL: Semua kartu menumpuk di posisi yang sama */
+  transform: rotate(0deg) translate(50px, 16px);
+}
+
+/* Base Style untuk Gambar di Dalam Kartu */
+.card-image {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 1.8rem;
+}
+
+/* Kontainer Label di bawah Gambar */
+.card-label {
+  margin-top: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+/* --- PENGATURAN SECARA DEFAULT (SAAT MENUMPUK) --- */
+.card-1 {
+  z-index: 10;
+  transform: rotate(-20deg) translate(50px, 16px) scale(0.9);
+}
+.card-2 {
+  z-index: 20;
+  transform: rotate(0deg) translate(70px, 16px) scale(0.95);
+}
+.card-3 {
+  z-index: 30;
+  background-color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(10deg) translate(100px, 16px) scale(1.05);
+}
+
+/* --- PENGATURAN POSISI SAAT AKTIF (DIKLIK) --- */
+
+/* Foto 1 pindah ke Kanan Atas */
+.gallery-container.active .card-1 {
+  transform: rotate(15deg) translate(258px, -58px) scale(0.8);
+}
+
+/* Foto 2 pindah ke Kiri */
+.gallery-container.active .card-2 {
+  transform: rotate(-12deg) translate(-112px, -24px) scale(0.9);
+}
+
+/* Foto 3 tetap di posisinya atau bisa disesuaikan */
+.gallery-container.active .card-3 {
+  transform: rotate(0deg) translate(70px, 16px) scale(1.05);
 }
