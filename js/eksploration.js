@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initProducts () {
   // ===== W A L I N K S =====
   const waLinks = {
     bungket: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bungket%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya%0ATerima%20kasih.",
@@ -219,4 +219,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set default all active
   setActiveCategory("all");
   renderProducts("all");
-});
+};
