@@ -365,6 +365,41 @@ body {
   transition-delay: 0.4s;
 }
 
+/* HEADER */
+/* --- KONDISI LAYAR DI BAWAH 1125px (Tampilan Mobile/Tablet) --- */
+@media (max-width: 1124px) {
+  .nav-desktop {
+    display: none !important; /* Sembunyikan Navigasi Utama */
+  }
+
+  .btn-wa-desktop {
+    display: none !important; /* Sembunyikan Tombol WA Kanan */
+  }
+
+  .btn-menu-mobile {
+    display: block !important; /* Tampilkan Tombol Hamburger */
+  }
+}
+
+/* --- KONDISI LAYAR 1125px KE ATAS (Tampilan Desktop) --- */
+@media (min-width: 1125px) {
+  .nav-desktop {
+    display: flex !important; /* Tampilkan Navigasi Utama */
+  }
+
+  .btn-wa-desktop {
+    display: inline-flex !important; /* Tampilkan Tombol WA Kanan */
+  }
+
+  .btn-menu-mobile {
+    display: none !important; /* Sembunyikan Tombol Hamburger */
+  }
+
+  .mobile-menu-container {
+    display: none !important; /* Pastikan menu dropdown mobile tertutup di desktop */
+  }
+}
+
 /* ===========================
    HEADING ANIMATION
 =========================== */
@@ -645,7 +680,7 @@ body {
     rgba(255, 255, 255, 0.366) 20%,
     rgba(255, 255, 255, 0) 100%
   );
-  
+
   pointer-events: none;
 
   /* Tetap z-index: 0 atau sesuaikan agar berada di bawah elemen card */
