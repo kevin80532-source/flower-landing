@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cahaya Florist - Rangkaian Bunga Premium & Elegan</title>
+    <link
+      rel="shortcut icon"
+      href="./images/logo-flower.png"
+      type="image/x-icon"
+    />
+    <!-- Tailwind CSS File (sudah di-compile) -->
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/input.css" />
+    <!-- Google Fonts: Cormorant Garamond (Elegant Serif) & Montserrat (Clean Sans) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS untuk mengatasi hal-hal yang tidak bisa dihandle Tailwind -->
+  </head>
+  <body class="bg-[#FAF9F6] text-stone-800 antialiased">
+    <!-- 1. HEADER & NAVIGATION -->
+    <header
+      class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-stone-100 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center"
+      >
+        <!-- Brand Logo Center/Left Concept -->
+        <a href="#home" class="flex items-center gap-4 group">
+          <img src="./images/logo-flower.png" alt="flower" width="65" />
+
+          <div class="flex flex-col leading-none">
+            <span
+              class="font-serif-luxury text-3xl font-bold tracking-wider text-[#526E2D]"
+            >
+              CF CAHAYA
+            </span>
+
+            <span
+              class="text-[10px] tracking-[0.25em] text-stone-500 uppercase font-medium mt-1 group-hover:text-[#F7A797] transition-colors"
+            >
+              CAHAYA FLORIST
+            </span>
+          </div>
+        </a>
+
+        <nav
+          class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest text-stone-600 uppercase"
+        >
+          <a
+            href="#home"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Home</a
+          >
+          <a
+            href="#keunggulan"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Keunggulan</a
+          >
+          <a
+            href="#kategori"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Kategori</a
+          >
+          <a
+            href="#katalog"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Katalog</a
+          >
+          <a
+            href="#testimoni"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Testimoni</a
+          >
+          <a
+            href="#kontak"
+            class="hover:text-[#526E2D] transition-colors py-2 border-b-2 border-transparent hover:border-[#F7A797]"
+            >Kontak</a
+          >
+        </nav>
+
+        <a
+          href="https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist,%0ASaya%20tertarik%20dengan%20produk%20yang%20tersedia%20di%20Cahaya%20Florist.%0ABoleh%20minta%20informasi%20lebih%20lanjut%3F%0ATerima%20kasih."
+          target="_blank"
+          class="hidden md:inline-flex items-center gap-2 bg-[#526E2D] hover:bg-[#3E5322] text-white px-6 py-3 rounded-full text-xs font-semibold tracking-widest uppercase transition-all shadow-md transform hover:-translate-y-0.5"
+        >
+          <i class="fab fa-whatsapp text-sm"></i> Chat Sekarang
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-[#526E2D] focus:outline-none"
+        >
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Container -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-b border-stone-100 px-6 py-6 flex flex-col space-y-4 font-semibold uppercase text-xs tracking-widest text-stone-600"
+      >
+        <a href="#home" class="hover:text-[#526E2D]">Home</a>
+        <a href="#keunggulan" class="hover:text-[#526E2D]">Keunggulan</a>
+        <a href="#kategori" class="hover:text-[#526E2D]">Kategori</a>
+        <a href="#katalog" class="hover:text-[#526E2D]">Katalog</a>
+        <a href="#testimoni" class="hover:text-[#526E2D]">Testimoni</a>
+        <a href="#kontak" class="hover:text-[#526E2D]">Kontak</a>
+        <a
+          href="https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist,%0ASaya%20tertarik%20dengan%20produk%20yang%20tersedia%20di%20Cahaya%20Florist.%0ABoleh%20minta%20informasi%20lebih%20lanjut%3F%0ATerima%20kasih."
+          target="_blank"
+          class="w-full text-center bg-[#526E2D] text-white py-3 rounded-full flex justify-center items-center gap-2 tracking-widest"
+          ><i class="fab fa-whatsapp"></i> WhatsApp</a
+        >
+      </div>
+    </header>
+
+    <div id="hero-container"></div>
+    <div id="keunggulan-container"></div>
+    <div id="kategori-container"></div>
+    <div id="katalog-container"></div>
+    <div id="testimoni-container"></div>
+    <div id="kontak-container"></div>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-stone-950 text-stone-600 py-10 text-center text-xs tracking-wider border-t border-stone-900/60 font-medium"
+    >
+      <p>
+        &copy; 2026 CF CAHAYA - Cahaya Florist. All Rights Reserved. Transaksi
+        Digital Aman via WhatsApp.
+      </p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/data_product.js"></script>
+    <script src="./js/eksploration.js"></script>
+    <script src="./js/load-sections.js"></script>
+  </body>
+</html>

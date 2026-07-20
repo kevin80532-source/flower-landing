@@ -1,7 +1,7 @@
-function initProducts () {
+(function () {
 
   const waLinks = {
-    bungket: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bungket%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya%0ATerima%20kasih.",
+    bungket: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bouquet%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya%0ATerima%20kasih.",
     papan: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Karangan%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
     vas: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Vas%20Bunga%20Meja.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
     custom: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20memiliki%20kebutuhan%20untuk%20membuat%20Rangkaian%20Bunga%20Custom.%0AApakah%20saya%20dapat%20berkonsultasi%20mengenai%20desain%2C%20harga%2C%20dan%20proses%20pemesanannya%3F%0ATerima%20kasih.",
@@ -112,7 +112,7 @@ function initProducts () {
 
   // mapping kategori ke label indo
   const categoryLabel = {
-    bungket: "Bungket Bunga",
+    bungket: "Bouquet Bunga",
     papan: "Karangan Bunga",
     vas: "Vas Bunga Meja",
     custom: "Custom Flower",
@@ -187,4 +187,4 @@ function initProducts () {
   // set default all active
   setActiveCategory("all");
   renderProducts("all");
-};
+})();
