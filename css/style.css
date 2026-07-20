@@ -650,7 +650,7 @@ body {
   left: 16px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(4px);
-  padding: 0.35rem 1rem;
+  padding: 0.53rem 1rem;
   border-radius: 9999px;
   font-size: 9px;
   font-weight: 700;
@@ -663,11 +663,11 @@ body {
   position: absolute;
   bottom: 16px;
   right: 16px;
-  background: #1c1c1c;
+  background: #526e2d;
   color: white;
   padding: 0.5rem 1.2rem;
   border-radius: 9999px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -678,7 +678,7 @@ body {
   cursor: pointer;
 }
 .product-card .wa-btn:hover {
-  background: #526e2d;
+  background: #1c1c1c;
   transform: scale(1.02);
 }
 .product-card .img-wrap {

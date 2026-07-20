@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ===== W A L I N K S =====
   const waLinks = {
-    bungket:
-      "https://wa.me/620000?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bungket%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya%0ATerima%20kasih.",
-    papan:
-      "https://wa.me/620000?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bunga%20Papan.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
-    vas: "https://wa.me/620000?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Vas%20Bunga%20Meja.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
-    custom:
-      "https://wa.me/620000?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20memiliki%20kebutuhan%20untuk%20membuat%20Rangkaian%20Bunga%20Custom.%0AApakah%20saya%20dapat%20berkonsultasi%20mengenai%20desain%2C%20harga%2C%20dan%20proses%20pemesanannya%3F%0ATerima%20kasih.",
+    bungket: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Bungket%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya%0ATerima%20kasih.",
+    papan: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Karangan%20Bunga.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
+    vas: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20tertarik%20dengan%20kategori%20Vas%20Bunga%20Meja.%0AMohon%20informasi%20mengenai%20pilihan%20produk%2C%20harga%2C%20dan%20cara%20pemesanannya.%0ATerima%20kasih.",
+    custom: "https://wa.me/6285940310541?text=Halo%20Admin%20Cahaya%20Florist%2C%0ASaya%20memiliki%20kebutuhan%20untuk%20membuat%20Rangkaian%20Bunga%20Custom.%0AApakah%20saya%20dapat%20berkonsultasi%20mengenai%20desain%2C%20harga%2C%20dan%20proses%20pemesanannya%3F%0ATerima%20kasih.",
   };
 
   // ===== P R O D U C T S =====
@@ -84,6 +81,30 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "custom",
       waLink: waLinks.custom,
     },
+    {
+      id: 13,
+      img: "./images/board-flower-7.jpeg",
+      category: "papan",
+      waLink: waLinks.papan,
+    },
+    {
+      id: 14,
+      img: "./images/board-flower-3.jpeg",
+      category: "papan",
+      waLink: waLinks.papan,
+    },
+    {
+      id: 15,
+      img: "./images/board-flower-5.jpeg",
+      category: "papan",
+      waLink: waLinks.papan,
+    },
+    {
+      id: 16,
+      img: "./images/board-flower-6.jpeg",
+      category: "papan",
+      waLink: waLinks.papan,
+    },
   ];
 
   const grid = document.getElementById("product-grid");
@@ -93,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // mapping kategori ke label indo
   const categoryLabel = {
     bungket: "Bungket Bunga",
-    papan: "Bunga Papan",
+    papan: "Karangan Bunga",
     vas: "Vas Bunga Meja",
     custom: "Custom Flower",
   };
@@ -122,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <img src="${p.img}" alt="${label}" loading="lazy" />
                   <span class="category-tag">${label}</span>
                   <a href="${p.waLink}" target="_blank" class="wa-btn">
-                    Order via WA
+                    <i class="fab fa-whatsapp text-sm"></i> Order
                   </a>
                 </div>
               </div>
